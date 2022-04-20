@@ -1,0 +1,106 @@
+
+//////////////////////////////////// BUTTON TYPE ////////////////////////////////////
+
+.btn-wrap.tac{
+  text-align: center;
+}
+
+.btn {
+  background: #5f8ee4;
+  border: none;
+  border-radius: 0.4em;
+  box-shadow: none;
+  cursor: pointer;
+  font: 17.6px "Open Sans", Arial, sans-serif;
+  color: #ffffff;
+}
+
+$btn-colors: (
+  btn-bg-white: (
+    bg-color: #eaeaea!important,
+    color:#333,
+    border:#ccc,
+  ),
+  btn-bg-yellow: (
+    bg-color: rgb(182, 182, 101),
+  ),
+  btn-bg-red: (
+    bg-color: #b22222!important,
+  ),
+);
+
+@each $key, $value in $btn-colors {
+  .#{$key} {
+    background-color: map-get($value, bg-color);
+    color: map-get($value, color)!important;
+    border: 1px solid map-get($value, border)!important;
+    position: relative;
+  }
+}
+
+$btn-sizes: (
+  btn-x-sm:(
+    padding: 0.2rem 1.0375rem,
+    font-size: 0.9rem,
+    align-self: flex-start,
+  ),
+  btn-sm: (
+    padding: 0.3rem 1.3375rem,
+    font-size: 1.1rem,
+  ),
+  btn-mid: (
+    padding: 0.625rem 2.075rem,
+    font-size:1.1rem,
+    h:40px,
+  ),
+  btn-lg: (
+    padding: 0.9rem 2.425rem,
+    font-size: 1.2rem,
+    font-w : 400,
+  ),
+);
+
+@each $key, $value in $btn-sizes {
+  .#{$key} {
+    display: inline-flex;
+    padding: map-get($value, padding);
+    font-size: map-get($value, font-size);
+    font-weight: map-get($value, font-w);
+    align-self: map-get($value, align-self);
+    height: map-get($value, h);;
+    align-items: center;
+    color: #fff;
+    border: 1px solid #777;
+    color: #444;
+    min-height: 2.3125rem;
+    background: #f5f5f5;
+    margin-bottom: 1.875rem;
+    // border-radius: 7px!important;
+    // line-height: 2.3125rem;
+  }
+}
+
+$btn-radius: (
+  btn-bd-sm: (
+    radius: .3125rem,
+  ),
+);
+
+@each $key, $value in $btn-radius {
+  .#{$key} {
+    border-radius: map-get($value, radius);
+  }
+}
+
+.btn.btn-outline {
+  background: transparent;
+  border: .0625rem solid #5f8ee4;
+  color: #333!important;
+}
+
+.btn.btn-disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+//////////////////////////////////// //BUTTON TYPE ////////////////////////////////////

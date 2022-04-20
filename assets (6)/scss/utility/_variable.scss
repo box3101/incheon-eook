@@ -1,0 +1,73 @@
+//each 반복문
+
+// @each $변수 in 데이터{
+//   실행문
+// }
+
+// gray color는 따로 사용하고, red등의 컬러 추가해서 사용
+
+////////////////////////////////////  COLOR, BACKGROUND ////////////////////////////////////
+$color-set: (
+  white: #fff,
+  red: #b22222,
+  blue : #0064FF
+);
+
+@each $color, $value in $color-set {
+  .#{$color} {
+    color: #{$value} !important;
+  }
+}
+
+$bg-color-set: (
+  bg-pink: pink,
+);
+
+@each $key, $value in $bg-color-set {
+  .#{$key} {
+    background: $value !important;
+  }
+}
+////////////////////////////////////  COLOR, BACKGROUND ////////////////////////////////////
+
+
+//ex for 문
+// @for $number from 1 through 5 {
+//   .number#{$number} {
+//     background: url("../img/background-img#{$number}.png") no-repeat;
+//   }
+// }
+
+// @for $i from 0 through 11 {
+//   .digit_#{$i} {
+//     @if $i <= 3 {
+//       background-position: (-156px * $i) 0;
+//     } @else if $i <= 7 {
+//       background-position: (-156px * ($i - 4)) -144px;
+//     } @else if $i <= 11 {
+//       background-postion: (-156px * ($i - 8)) -287px;
+//     }
+//   }
+// }
+
+// 반응형
+$b-web: 1200px;
+$b-tab: 900px;
+$b-mo: 600px;
+
+$zIndex-set: (
+  popup: 100,
+  fixed: 20,
+  header: 10,
+  double: 2,
+  default: 1,
+  zero: 0,
+  minus: -1,
+);
+
+$path-set: (
+  icon: "../img/icon/",
+  img: "../img/",
+  logo: "../img/logo/",
+  object: "../img/object/",
+);
